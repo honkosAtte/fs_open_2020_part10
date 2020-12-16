@@ -15,8 +15,14 @@ const styles = StyleSheet.create({
 
 const Main = () => {
   return (
-    <View style={styles.container}>
-        <AppBar text='Repositories' /> 
+    <View style={styles.container}> 
+        <AppBar><Link to="/">
+           <Text style={{color:'white', fontSize:20, paddingLeft:10}}>Repositories</Text>
+        </Link>
+        <Link to="/signing">
+           <Text style={{color:'white', fontSize:20, paddingLeft:10}}>SignIn</Text>
+        </Link>   
+        </AppBar>
         <Switch>
           <Route path="/" exact>
             <RepositoryList/>
@@ -26,13 +32,6 @@ const Main = () => {
           </Route>
           <Redirect to="/"/>
         </Switch>
-        <Link to="/signing">
-           <Text>SignIn</Text>
-        </Link>
-        <Link to="/">
-           <Text>Repositories</Text>
-        </Link>
-
 
     </View>
   );

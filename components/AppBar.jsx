@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native';
+import { View, StyleSheet, TouchableWithoutFeedback, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import theme from '../theme';
 
@@ -7,6 +7,11 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: Constants.statusBarHeight,
     backgroundColor: theme.colors.tabBarPrimary,
+    alignItems:'baseline',
+    flexDirection:'row',
+    flexWrap:'wrap',
+    height:Constants.statusBarHeight + 50
+
   },
   text: {
     color: theme.colors.textSecondary,
@@ -16,8 +21,16 @@ const styles = StyleSheet.create({
   // ...
 });
 
-const AppBar = ({text}) => {
-  return <TouchableWithoutFeedback><View  style={styles.container}><Text style={styles.text}>{text}</Text></View ></TouchableWithoutFeedback>;
+const AppBar = ({children}) => {
+
+  return (
+  <View style={styles.container}>
+<ScrollView horizontal>
+<TouchableWithoutFeedback><View style={{flexDirection:'row'}}>{children}</View></TouchableWithoutFeedback>
+</ScrollView>
+  </View>
+  );
 };
 
 export default AppBar;
+
