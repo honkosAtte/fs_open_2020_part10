@@ -22,7 +22,7 @@ const cardHeaderStyles = StyleSheet.create({
     infoContainer: {
       flexGrow: 1,
     },
-    whiteTextonBlue:{  //Tmä vielä kesken
+    whiteTextonBlue:{  
         padding:5,
         marginLeft:85,
         alignSelf:'flex-start',
